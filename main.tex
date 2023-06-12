@@ -1,0 +1,196 @@
+\documentclass[10pt, twoside, letterpaper]{report}
+
+% ==================================================
+%                    Configuration
+% ==================================================
+
+% === General ===
+\usepackage[utf8]{inputenc}                                             % Set input encoding
+\usepackage[english]{babel}                                             % Set input language
+\usepackage{textcomp}                                                   % Extended text companion fonts
+\usepackage{subfiles}                                                   % Allow sub files
+\usepackage{url}                                                        % Allow urls
+\usepackage{hyperref}                                                   % Allow hyperlinks
+\usepackage{comment}                                                    % Allow multiline comments
+\usepackage{eurosym}                                                    % Allow euro symbol
+\usepackage{gensymb}                                                    % Allow generic symbols
+\usepackage{soul}                                                       % Allow underlining and striking out
+\usepackage[toc]{appendix}                                              % Enhanced appendices
+\usepackage{geometry}                                                   % Allow document customization
+\geometry{                                                              % Set document margins
+    a4paper,
+    top=3.57cm,
+    left=3.15cm,
+    right=3.15cm,
+    bottom=3.57cm,
+}
+
+% === Metadata ===
+\input{meta.tex}                                                        % Import meta data
+
+% === Header & Footer ===
+\usepackage{fancyhdr}                                                   % Allow header & footer customization
+\pagestyle{fancy}                                                       % Set page style
+\fancyhf{}                                                              % Remove existing header & footer
+\fancyhead[LE]{\programme}                                              % Set left even page header
+\fancyhead[RE]{\finalyear}                                              % Set right even page header
+\fancyhead[LO]{\shortname}                                              % Set left odd page header
+\fancyhead[RO]{\shorttitle}                                             % Set right odd page header
+\fancyfoot[LE]{{\thepage}}                                              % Set left even page footer
+\fancyfoot[RO]{{\thepage}}                                              % Set right odd page header
+\renewcommand{\headrulewidth}{0pt}                                      % Remove header line
+\renewcommand{\footrulewidth}{0pt}                                      % Remove footer line
+\fancypagestyle{plain}{                                                 % Set plain page style
+    \fancyhf{}
+    \fancyhead[LE]{\programme}
+    \fancyhead[RE]{\finalyear}
+    \fancyhead[LO]{\shortname}
+    \fancyhead[RO]{\shorttitle}
+    \fancyfoot[LE]{{\thepage}}
+    \fancyfoot[RO]{{\thepage}}
+}
+
+% === Title, Chapters & Sections ===
+\usepackage{titlesec}                                                   % Allow title customization
+
+\titleformat{\chapter}
+    {\normalsize\LARGE\bfseries}{\thechapter}{12pt}{}                   % Set chapter style
+\titlespacing*{\chapter}{0pt}{0pt}{6pt}                                 % Set chapter spacing
+
+\titleformat{\section}
+    {\normalsize\large\bfseries}{\thesection}{12pt}{}                   % Set section style
+\titlespacing*{\section}{0pt}{10pt}{10pt}                               % Set section spacing
+
+\titleformat{\subsection}
+    {\normalsize\normalsize\bfseries}{\thesubsection.}{12pt}{}          % Set subsection style
+\titlespacing*{\subsection}{0pt}{10pt}{10pt}                            % Set subsection spacing
+
+\titleformat{\subsubsection}
+    {\small\itshape}{\thesubsubsection}{0pt}{}                          % Set subsubsection style
+\titlespacing{\subsubsection}{0pt}{12pt}{0pt}                           % Set subsubsection spacing
+\renewcommand{\thesubsubsection}{}                                      % Set subsubsection numbering
+
+% === Formatting ===
+\usepackage{parskip}                                                    % Set vertical space between sections
+
+% === Citations ===
+\usepackage{natbib}                                                     % Set citation style (apa)
+\bibliographystyle{apalike}                                             % Set bibliography style (apa)
+
+% === Figures & Tables ===
+\usepackage{graphicx}                                                   % Allow images
+\usepackage{subcaption}                                                 % Allow subcaptions
+\usepackage{wrapfig}                                                    % Allow figure text wrapping
+
+\usepackage{tabularx}                                                   % Enhanced tables
+\usepackage{booktabs}                                                   % Enhanced tables
+\usepackage{lscape}                                                     % Allow landscape tables
+\usepackage{multirow}                                                   % Allow multiple rows
+\usepackage{longtable}                                                  % Allow multipage tables
+
+\usepackage{float}                                                      % Enhanced placement
+\usepackage[format=plain, labelfont={it}, textfont=it]{caption}         % Set caption style
+
+% === Mathematics ===
+\usepackage{amsmath}                                                    % Enhanced mathematical formulas
+\usepackage{amssymb}                                                    % Extended mathematical symbols
+\usepackage{amsfonts}                                                   % Extended mathematical fonts
+
+% === Dates ===
+\usepackage{datetime}                                                   % Enhanced dates
+
+% === Code ===
+\usepackage{minted}                                                     % Allow code highlighting
+
+% === Colors ===
+\usepackage{xcolor}                                                     % Allow colors
+
+% ==================================================
+%                      Document
+% ==================================================
+
+\begin{document}
+
+% === Title ===
+\begin{titlepage}
+\begin{center}
+    \huge{\textbf{\longtitle}}\\[1.2cm]
+
+    \normalsize{\fullname}\\
+    \normalsize{\textsc{Student number}: \studentnumber}\\[1cm]
+
+    \normalsize{\textsc{Thesis submitted in partial fulfillment}}\\
+    \normalsize{\textsc{of the requirements for the degree of}}\\
+    \normalsize{\textsc{Master of Science in \programme}}\\
+    \normalsize{\textsc{Jheronimus Academy of Data Science}}\\[1.5cm]
+    
+    \normalsize{Thesis committee:}\\[0.2cm]
+    \normalsize{\firstsupervisor}\\
+    \normalsize{\secondsupervisor}
+
+    \vfill
+
+    \normalsize{Jheronimus Academy of Data Science}\\
+    \normalsize{'s-Hertogenbosch, The Netherlands}\\
+    \normalsize{\finalmonth, \finalyear}
+\end{center}
+\end{titlepage}
+\newpage\thispagestyle{empty}\strut\newpage\thispagestyle{empty}
+
+% === Preface ===
+\textbf{Preface}
+
+\input{Ch/0_preface}
+
+\newpage\thispagestyle{empty}\strut\newpage\thispagestyle{empty}
+
+% === Table of contents ===
+\tableofcontents
+\addtocontents{toc}{\protect\thispagestyle{empty}}
+\newpage\thispagestyle{empty}\strut\newpage\thispagestyle{empty}
+
+% === Content ===
+\setcounter{page}{1}
+\huge{\textbf{\longtitle}}\\[1cm]
+\large{\fullname}\\[0.5cm]
+\thispagestyle{empty}
+
+% === Abstract ===
+\normalsize\textit{\input{Ch/0_abstract}}\\[0.5cm]
+
+% === Chapters ===
+{\let\clearpage\relax\chapter{Introduction}\thispagestyle{empty}}
+\label{ch:introduction}
+\input{Ch/1_introduction}
+
+\chapter{Theory}
+\label{ch:theory}
+\input{Ch/2_theory}
+
+\chapter{Methods}
+\label{ch:methods}
+\input{Ch/3_methods}
+
+\chapter{Results}
+\label{ch:results}
+\input{Ch/4_results}
+
+\chapter{Conclusion}
+\label{ch:conclusion}
+\input{Ch/5_conclusion}
+
+% === References ===
+\bibliography{references.bib}
+\addcontentsline{toc}{chapter}{Bibliography}
+
+% === Appendix ===
+\begin{appendices}
+\addtocontents{toc}{\protect\setcounter{tocdepth}{0}}
+
+\chapter{Appendix A}
+\label{app:appendix_a}
+\input{App/1_appendix_a}
+
+\end{appendices}
+
+\end{document}
