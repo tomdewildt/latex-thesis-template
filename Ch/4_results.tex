@@ -1,0 +1,24 @@
+% ==================================================
+%                      Results
+% ==================================================
+In addition to what's described in the guidelines, make sure to provide \textit{compact} information. Let's say I ran many many different parameter settings, ideally you only want to show the versions of your models that scored highest overall (so classifier + parameter settings). Maybe you might want to compare between classifiers, but generally only when that's useful. See Table \ref{tab:table} for reporting different pipeline settings. Note that the import numbers (highest per column) are bold for quick lookup. This is also the general table style you should try to adhere to (nicely APA). For figures, at least export to PDF or something that scales (SVGs work poorly in \LaTeX). This is also the part to include post-hoc analysis. Make sure that it's clearly separated from your main results though!
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{@{\extracolsep{5pt}}lccc} 
+        \\[-1.8ex]\hline 
+        \hline \\[-1.8ex] 
+        Statistic & Variable A & Variable C & Variable C \\ 
+        \hline \\[-1.8ex] 
+        N & 13000 & 13000 & 13000 \\ 
+        Mean & 50.000 & 50.000 & 50.000 \\ 
+        St. Dev. & 1.5 & 1.5 & 1.5 \\ 
+        Min & 14.075 & 14.075 & 14.075 \\ 
+        Pctl(25) & 49.000 & 49.000 & 49.000 \\ 
+        Pctl(75) & 54.000 & 54.000 & 54.000 \\ 
+        Max & 60.000 & 60.000 & 60.000 \\ 
+        \hline \\[-1.8ex] 
+    \end{tabular}
+    \caption{Table example.} 
+    \label{tab:table} 
+\end{table}

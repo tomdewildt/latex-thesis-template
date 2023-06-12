@@ -1,0 +1,51 @@
+% ==================================================
+%                      Methods
+% ==================================================
+Now comes the "beef" of the paper, where you explain what you did. Again, organize it in paragraphs with titles. As in every section you start with a very brief overview of the section. This section may vary significantly depending on your topic. You may also choose to make the different parts individual sections. Here is a more general structure:
+
+\section{Design} \label{sec:design}
+
+Concisely present your design. Focus on novel aspects, but avoid implementation details. Use pseudo-code and figures to better explain your design, but also present and explain these in the text. To assist in evaluating your design choices, it may be relevant to describe several distinct \textit{design alternatives} that can later be compared.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\textwidth]{Fig/placeholder.png}
+    \caption{Figure example.}
+    \label{fig:figure}
+\end{figure}
+
+\section{Analysis} \label{sec:analysis}
+
+Argue for the correctness of your design and why you expect it to perform better than previous work. If applicable, mention how your design relates to theoretical bounds.
+
+\section{Optimization} \label{sec:optimization}
+
+Explain how you optimized your design and adjusted it to specific situations. Generally, as important as the final results is to show that you took a structured, organized approach to the optimization and that you explain why you did what you did. Be careful to argue, why your optimization does not break the correctness of your design, established above. It is often a good strategy to explain a design or protocol in stepwise refinements, so as to more easily convince the reader of its correctness.
+
+\begin{equation}
+    e = mc^2
+    \label{eq:equation} 
+\end{equation}
+
+\section{Implementation} \label{sec:implementation}
+
+It is not necessary to "explain" your code. However, in some cases it may be relevant to highlight additional contributions given by your implementation. Examples for such contributions are:
+
+\begin{itemize}
+    \item \emph{Abstractions and modules}: If your implementation is nicely separated into interacting modules with separated responsibilities you could explain this structure, and why it is good/better than some other alternative structure.
+
+    \item \emph{Optimization}: If you spend significant time optimizing your code, e.g.~using profiling tools, the result of such optimization may be presented as a contribution. In this case, reason, why the optimized code works better.
+
+    \item \emph{Evaluation framework}: If you implemented a framework or application to evaluate your implementation against existing work, or in a specific scenario, this framework may be presented as a contribution.
+\end{itemize}
+
+\begin{listing}[H]
+    \begin{minted}{python}
+        def hello():
+            print("Hello World!")
+    \end{minted}
+    \caption{Code example.}
+    \label{lst:code}
+\end{listing}
+
+Make sure to cite all external resources used.
