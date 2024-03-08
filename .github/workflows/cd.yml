@@ -20,7 +20,7 @@ jobs:
           root_file: main.tex
           latexmk_shell_escape: true
       - name: Create release
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@v2
         with:
           files: main.pdf
         env:
